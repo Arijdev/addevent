@@ -1,38 +1,186 @@
-.App {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1 {
   text-align: center;
+  margin-top: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Calendar Styles */
+.calendar {
+  margin: 20px auto;
+  max-width: 600px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid #ddd;
+  background-color: #f7f7f7;
+}
+
+.calendar-day-header {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+  border-right: 1px solid #ddd;
+}
+
+.calendar-day-header:last-child {
+  border-right: none;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+}
+
+.calendar-cell {
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+  min-height: 80px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  transition: background-color 0.3s ease;
+}
+
+.calendar-cell:hover {
+  background-color: #e0f7fa;
+}
+
+.calendar-date {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 14px;
+  color: #888;
+}
+
+.calendar-event {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.empty-cell {
+  background-color: #f4f4f4;
+  cursor: default;
+  border: none;
+}
+
+/* Event Form Styles */
+.event-form-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.event-form-container form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.event-form-container label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.event-form-container input,
+.event-form-container select,
+.event-form-container textarea {
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.event-form-container button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4caf50;
   color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+/* Event Details Styles */
+.event-details {
+  margin: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.event-details h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.event-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.event-details button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Filter Events Styles */
+.filter-events {
+  margin: 20px;
+}
+
+.filter-events select {
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
 }
